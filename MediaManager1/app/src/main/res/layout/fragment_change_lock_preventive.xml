@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thay đổi mật khẩu ứng dụng"
+            android:padding="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhile"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_change_lock_preventive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhile"
+            android:textSize="17dp"
+            android:text="Nhập mã hiện tại"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/edt_change_lock_preventive"/>
+
+        <EditText
+            android:layout_centerInParent="true"
+            android:id="@+id/edt_change_lock_preventive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:password="true"
+            android:maxLength="10"/>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/tv_change_draw_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi mẫu hình"
+            android:textSize="22dp"
+            android:textColor="@color/colorWhile"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:padding="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_change_lock_preventive_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiếp tục"
+            android:textSize="22dp"
+            android:textColor="@color/colorWhile"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"/>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/tv_change_lock_preventive_succes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xong"
+            android:textSize="22dp"
+            android:textColor="@color/colorWhile"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"/>
+
+    </RelativeLayout>
+
+</layout>
+
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/securityimage">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="40dp"
+            android:layout_height="wrap_content"
+            android:text="@string/music_media_manager"
+            android:textStyle="bold"/>
+
+        <!--<ProgressBar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:indeterminateTint="@android:color/white" />-->
+
+        <com.tuyenmonkey.mkloader.MKLoader
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:mk_type="TwinFishesSpinner"
+            app:mk_color="#FFFFFF" />
+
+    </LinearLayout>
+</layout>

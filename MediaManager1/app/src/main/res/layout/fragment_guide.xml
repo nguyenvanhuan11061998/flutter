@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_foreground"
+                android:padding="10dp"
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Media Manager 1.0"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:paddingTop="35dp"
+                    android:textSize="20dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFEB3B"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="1. Tính năng chính."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:paddingLeft="10dp"
+            android:text=" - Hiển thị ảnh, video trong bộ nhớ.\n - Lưu trữ ảnh, video riêng tư.\n - Hiển thị và phát nhạc trong bộ nhớ.
+\n - Hỗ trợ chụp hình, quay video, lưu vào bộ nhớ trong.\n - Chia sẻ ảnh, video tới các ứng dụng khác."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFEB3B"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="2. Hướng dẫn."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=" - Lưu trữ ảnh, video vào ứng dụng: .\nB1: nhấn giữ ảnh, video của lưu trữ ngoài.\nB2:
+Chọn ảnh muốn thực hiện.\nB3: Nhấn '' Ẩn Ảnh/ Ẩn video'' dưới màn hình.\n Chú ý: Ảnh sau khi ẩn vẫn nhìn thấy được từ ứng dụng bên ngoài. Để không muốn người khác nhìn thấy bạn nên ra ngoài và xóa ảnh "/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_out_fmGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:text="Thoát"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:padding="20dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

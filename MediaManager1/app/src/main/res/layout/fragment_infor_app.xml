@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_foreground"
+                android:padding="10dp"
+                android:layout_margin="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Media Manager 1.0"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:paddingTop="35dp"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:maxLines="2"
+                    android:text="07.09.2019"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"></View>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="Ứng dụng quản lý ảnh và video mới nhất trên android."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="Cảm ơn bạn đã lựa chọn ứng dụng của chúng tôi."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="Ứng dụng bảo vệ quyền riêng tư ảnh/video bằng mật khẩu."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="Bạn đang dùng phiên bản miễn phí không chứa quảng cáo."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:text="Ứng dụng đã đăng ký bản quyền vào ngày 01/09/2019."/>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Mọi thắc mắc xin gửi về : huannv62@wru.vn. Chúng tôi sẽ cố gắng giải đáp thắc mắc sớm nhất cho các bạn."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FC2434"
+            android:textSize="13dp"
+            android:maxLines="2"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="Lưu ý:"/>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            android:maxLines="10"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Ảnh và video trong ứng dụng được lưu trữ trong bộ nhớ trong của ứng dụn.
+ Xóa ứng dụng có thể gây mất dữ liệu. Vì vậy, trước khi xóa ứng dụng nên sao lưu lại dư liệu để tránh mất mát"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_out_fmInfor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Thoát"
+                android:padding="20dp"
+                android:textSize="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"></TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

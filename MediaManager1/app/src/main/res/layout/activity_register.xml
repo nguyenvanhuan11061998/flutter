@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/securityimage">
+
+        <TextView
+            android:id="@+id/tv1_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Media Manager"
+            android:padding="100dp"
+            android:textSize="40dp"
+            android:textColor="@color/colorWhile"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv1_hint_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vẽ mẫu hình tạo khóa bảo mật cho ứng dụng của bạn"
+            android:layout_below="@+id/tv1_register"
+            android:textSize="17dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhile"/>
+
+        <com.andrognito.patternlockview.PatternLockView
+            android:layout_below="@+id/tv1_hint_pass"
+            android:id="@+id/pattenLockView"
+            android:layout_margin="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll_act_register"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_Prev"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quay lại"
+                    android:textColor="@color/colorWhile"
+                    android:textSize="25dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
+

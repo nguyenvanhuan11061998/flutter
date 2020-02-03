@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Media</string>
+    <string name="picture">Ảnh</string>
+    <string name="photo">Ảnh</string>
+    <string name="video">Video</string>
+    <string name="music">Âm nhạc</string>
+    <string name="navigation_drawer_open">navigation drawer open</string>
+    <string name="navigation_drawer_close">navigation drawer close</string>
+    <string name="myPhoto">Ảnh</string>
+    <string name="myVideo">Video</string>
+    <string name="myMusic">Âm nhạc</string>
+    <string name="music_media_manager">MEDIA MANAGER</string>
+
+</resources>
