@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">project1</string>
+    <string name="nhap_thong_tin">Nhập thông tin</string>
+    <string name="nhap_ho_ten">Nhập họ tên</string>
+    <string name="nhap_ma_sinh_vien">Nhập mã sinh viên</string>
+    <string name="nhap_gioi_tinh">Nhập giới tính</string>
+    <string name="nhap_lop">Nhập lớp</string>
+    <string name="nhap_diem_toan">Nhập điểm toán</string>
+    <string name="nhap_diem_ly">Nhập điểm lý</string>
+    <string name="nhap_diem_hoa">Nhập điểm hóa</string>
+    <string name="luu_thong_tin">Lưu thông tin</string>
+    <string name="ma_sinh_vien">Mã sinh viên: </string>
+    <string name="ho_ten">Họ tên:</string>
+    <string name="lop">Lớp</string>
+    <string name="gioi_tinh">Giới tính</string>
+    <string name="toan">Toán:</string>
+    <string name="hoa">Hóa</string>
+    <string name="ly">Lý</string>
+    <string name="nhap_thong_tin_chua_day_du">Nhập thông tin chưa đầy đủ!</string>
+    <string name="da_luu_thong_tin_sinhvien">Đã lưu thông tin sinh viên.</string>
+    <string name="danh_sach_sinh_vien">Danh sách sinh viên</string>
+    <string name="them_sinh_vien">Thêm mới sinh viên</string>
+    <string name="thay_doi_thong_tin">Thay đổi thông tin</string>
+    <string name="da_xoa_sinh_vien">Đã xóa sinh viên</string>
+</resources>
