@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">base_project</string>
+    <string name="he_thong_loi">Lỗi hệ thống, vui lòng thử lại.</string>
 </resources>

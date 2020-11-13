@@ -1,14 +1,18 @@
-package com.example.base_project;
+package com.example.base_project.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.widget.TextView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
+import com.example.base_project.R;
 import com.example.base_project.base.BaseActivity;
 import com.example.base_project.nowPlaying.view.NowPlayingHomeFragment;
 import com.example.base_project.popular.view.PopularHomeFragment;
@@ -25,9 +29,12 @@ public class MainActivity extends BaseActivity {
     AHBottomNavigation bottomNavigation;
     @BindView(R.id.view_pager_main)
     ViewPager viewPagerMain;
+    @BindView(R.id.tv_title_screen)
+    TextView titleScreenTextView;
 
     private int postionTab = 0;
     private ArrayList<AHBottomNavigationItem> listBottomNavigation;
+    private MainViewModel viewModel;
 
     private UpcomingHomeFragment upcomingHomeFragment;
     private TopRatedHomeFragment topRatedHomeFragment;
@@ -41,11 +48,25 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initAct() {
+        viewModel = getViewModel(MainViewModel.class);
+        initViewModel();
         bottomNavigation.setBehaviorTranslationEnabled(false);
         bottomNavigation.setCurrentItem(postionTab);
         updateBottomNavigation();
     }
 
+    private void initViewModel() {
+        viewModel.getTitle().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String title) {
+                if (title != null) {
+                    titleScreenTextView.setText(title);
+                }
+            }
+        });
+    }
+
+    @SuppressLint("NewApi")
     private void updateBottomNavigation() {
         listBottomNavigation = new ArrayList<>();
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Upcoming", R.drawable.ic_upcoming);
@@ -58,9 +79,10 @@ public class MainActivity extends BaseActivity {
         listBottomNavigation.add(item3);
         listBottomNavigation.add(item4);
 
-        bottomNavigation.setAccentColor(Color.parseColor("#218393"));
-        bottomNavigation.setInactiveColor(Color.parseColor("#A0AEBB"));
+        bottomNavigation.setAccentColor(Color.parseColor("#ffffff"));
+        bottomNavigation.setInactiveColor(Color.parseColor("#ffffff"));
         bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
+        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#000000"));
 
         bottomNavigation.removeAllItems();
         bottomNavigation.addItems(listBottomNavigation);
@@ -128,12 +150,25 @@ public class MainActivity extends BaseActivity {
         viewPagerMain.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
             public void onPageSelected(int position) {
                 bottomNavigation.setCurrentItem(position);
+                switch (position) {
+                    case 0:
+                        viewModel.getTitle().setValue("Upcoming");
+                        break;
+                    case 1:
+                        viewModel.getTitle().setValue("Top Rated");
+                        break;
+                    case 2:
+                        viewModel.getTitle().setValue("Popular");
+                        break;
+                    case 3:
+                        viewModel.getTitle().setValue("Now Playing");
+                        break;
+                }
             }
 
             @Override
