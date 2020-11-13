@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import androidx.lifecycle.ViewModel;
 
-class BaseViewModel extends ViewModel {
+public class BaseViewModel extends ViewModel {
     protected Activity mActivity;
 
     public BaseViewModel setActivity(Activity mActivity) {
