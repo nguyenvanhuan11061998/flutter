@@ -25,6 +25,8 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
 
+    public static final String ID_FILM = "ID_FILM";
+
     @BindView(R.id.bottom_navigation)
     AHBottomNavigation bottomNavigation;
     @BindView(R.id.view_pager_main)

@@ -1,5 +1,6 @@
 package com.example.base_project.upcoming.view;
 
+import android.content.Intent;
 import android.widget.RelativeLayout;
 
 import androidx.lifecycle.Observer;
@@ -9,6 +10,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.base_project.R;
 import com.example.base_project.base.BaseFragment;
+import com.example.base_project.detailFim.DetailFilmActivity;
+import com.example.base_project.main.MainActivity;
 import com.example.base_project.main.model.Movie;
 import com.example.base_project.upcoming.adapter.ListMovieHorizontalAdapter;
 import com.example.base_project.upcoming.viewModel.UpcomingHomeViewModel;
@@ -16,6 +19,8 @@ import com.example.base_project.upcoming.viewModel.UpcomingHomeViewModel;
 import java.util.List;
 
 import butterknife.BindView;
+
+import static com.example.base_project.main.MainActivity.ID_FILM;
 
 public class UpcomingHomeFragment extends BaseFragment {
     @BindView(R.id.rv_top_rate)
@@ -74,7 +79,9 @@ public class UpcomingHomeFragment extends BaseFragment {
                     upcomingMovingAdapter = new ListMovieHorizontalAdapter(getContext(), movies, new ListMovieHorizontalAdapter.ClickItemListener() {
                         @Override
                         public void onClickMovie(int position) {
-
+                            Intent intent = new Intent(getActivity(), DetailFilmActivity.class);
+                            intent.putExtra(ID_FILM, upcomingMovingAdapter.getListMovie().get(position).getId().toString());
+                            startActivity(intent);
                         }
                     });
                     upcomingView.setAdapter(upcomingMovingAdapter);
@@ -93,7 +100,9 @@ public class UpcomingHomeFragment extends BaseFragment {
                     popularMovieAdapter = new ListMovieHorizontalAdapter(getContext(), movies, new ListMovieHorizontalAdapter.ClickItemListener() {
                         @Override
                         public void onClickMovie(int position) {
-
+                            Intent intent = new Intent(getActivity(), DetailFilmActivity.class);
+                            intent.putExtra(ID_FILM, popularMovieAdapter.getListMovie().get(position).getId().toString());
+                            startActivity(intent);
                         }
                     });
                     popularView.setLayoutManager(layoutManager);
@@ -113,7 +122,9 @@ public class UpcomingHomeFragment extends BaseFragment {
                     topRatedMovieAdapter = new ListMovieHorizontalAdapter(getContext(), movies, new ListMovieHorizontalAdapter.ClickItemListener() {
                         @Override
                         public void onClickMovie(int position) {
-
+                            Intent intent = new Intent(getActivity(), DetailFilmActivity.class);
+                            intent.putExtra(ID_FILM, topRatedMovieAdapter.getListMovie().get(position).getId().toString());
+                            startActivity(intent);
                         }
                     });
                     topRatedView.setLayoutManager(layoutManager);
