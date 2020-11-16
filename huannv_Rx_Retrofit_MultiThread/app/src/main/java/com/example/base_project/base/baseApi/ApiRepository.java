@@ -41,6 +41,9 @@ public interface ApiRepository {
 
     @GET("movie/{movie_id}/recommendations")
     Observable<MovieResponse> getRecommendationMovie (@Path("movie_id") String movieId,
-                                               @QueryMap Map<String, String> params);
+                                                      @QueryMap Map<String, String> params);
+
+    @GET("search/movie")
+    Observable<MovieResponse> searchFilm (@QueryMap Map<String, String> params);
 
 }

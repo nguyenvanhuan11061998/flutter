@@ -4,24 +4,34 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.base_project.R;
 import com.example.base_project.base.BaseActivity;
+import com.example.base_project.main.model.Movie;
 import com.example.base_project.nowPlaying.view.NowPlayingHomeFragment;
 import com.example.base_project.popular.view.PopularHomeFragment;
 import com.example.base_project.topRated.view.TopRatedHomeFragment;
 import com.example.base_project.upcoming.view.UpcomingHomeFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
@@ -33,6 +43,18 @@ public class MainActivity extends BaseActivity {
     ViewPager viewPagerMain;
     @BindView(R.id.tv_title_screen)
     TextView titleScreenTextView;
+    @BindView(R.id.view_search)
+    RelativeLayout viewSearch;
+    @BindView(R.id.rl_search)
+    RelativeLayout searchRlayout;
+    @BindView(R.id.img_search)
+    ImageView searchImageView;
+    @BindView(R.id.edt_search)
+    EditText searchEditText;
+    @BindView(R.id.img_back)
+    ImageView backImageView;
+    @BindView(R.id.rv_search)
+    RecyclerView searchList;
 
     private int postionTab = 0;
     private ArrayList<AHBottomNavigationItem> listBottomNavigation;
@@ -43,6 +65,8 @@ public class MainActivity extends BaseActivity {
     private PopularHomeFragment popularHomeFragment;
     private NowPlayingHomeFragment nowPlayingHomeFragment;
 
+    private SearcAdapter searcAdapter;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
@@ -50,11 +74,38 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initAct() {
+        searchRlayout.setVisibility(View.GONE);
+        viewSearch.setVisibility(View.GONE);
         viewModel = getViewModel(MainViewModel.class);
         initViewModel();
         bottomNavigation.setBehaviorTranslationEnabled(false);
         bottomNavigation.setCurrentItem(postionTab);
         updateBottomNavigation();
+        initView();
+    }
+
+    private void initView() {
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (searchEditText.getText() != null && searchEditText.getText().length() > 0) {
+                    String textSearch = searchEditText.getText().toString();
+                    viewModel.searchFilm(textSearch);
+                } else {
+                    viewSearch.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     private void initViewModel() {
@@ -63,6 +114,29 @@ public class MainActivity extends BaseActivity {
             public void onChanged(String title) {
                 if (title != null) {
                     titleScreenTextView.setText(title);
+                }
+            }
+        });
+
+        viewModel.getListFilmSearch().observe(this, new Observer<List<Movie>>() {
+            @Override
+            public void onChanged(List<Movie> movies) {
+                if (movies.size() > 0) {
+                    viewSearch.setVisibility(View.VISIBLE);
+                    if (searcAdapter == null) {
+                        searcAdapter = new SearcAdapter(MainActivity.this, new SearcAdapter.OnClickListener() {
+                            @Override
+                            public void onClickItem(int position) {
+
+                            }
+                        });
+                        searcAdapter.setListData(movies);
+                        searchList.setAdapter(searcAdapter);
+                    } else {
+                        searcAdapter.setListData(movies);
+                    }
+                } else {
+                    viewSearch.setVisibility(View.GONE);
                 }
             }
         });
@@ -178,6 +252,19 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @OnClick({R.id.img_search, R.id.img_back})
+    void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.img_search:
+                searchRlayout.setVisibility(View.VISIBLE);
+                break;
+            case R.id.img_back:
+                searchRlayout.setVisibility(View.GONE);
+                viewSearch.setVisibility(View.GONE);
+                break;
+        }
     }
 
 }
