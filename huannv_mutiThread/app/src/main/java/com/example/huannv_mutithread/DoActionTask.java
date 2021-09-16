@@ -9,6 +9,9 @@ public class DoActionTask extends BaseWorker{
         this.name = TAG;
         this.priority = priority;
         this.delayTime = delayTime;
+
+
+        // huan
     }
 
 }
